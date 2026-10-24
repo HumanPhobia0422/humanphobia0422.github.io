@@ -1,0 +1,34 @@
+---
+layout: default
+title: 카테고리
+permalink: /categories/
+---
+<section class="categories-page">
+  <h1 class="section-label"><span class="dim">$</span> tree ./categories</h1>
+  {% assign category_names = site.category_list %}
+  {% for category in site.categories %}
+    {% assign category_name_array = category | slice: 0, 1 %}
+    {% assign category_names = category_names | concat: category_name_array %}
+  {% endfor %}
+  {% assign category_names = category_names | uniq %}
+  {% for category_name in category_names %}
+  {% assign category_posts = site.categories[category_name] %}
+  <div class="category-group">
+    <h2 id="{{ category_name | slugify }}">{{ category_name | escape }} <span class="count">{{ category_posts.size | default: 0 }}개</span></h2>
+    {% if category_posts.size > 0 %}
+    <ul>
+      {% for post in category_posts %}
+      <li class="post-item">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty-state">아직 작성된 글이 없습니다.</p>
+    {% endif %}
+  </div>
+  {% else %}
+  <p class="empty-state">등록된 카테고리가 없습니다.</p>
+  {% endfor %}
+</section>

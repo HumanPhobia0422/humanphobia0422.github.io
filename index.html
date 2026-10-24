@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="hero-line"><span class="dim">$</span> cat README.md</p>
+  <h1>{{ site.tagline }}</h1>
+</section>
+
+  {% assign category_names = site.category_list %}
+  {% for category in site.categories %}
+    {% assign category_name_array = category | slice: 0, 1 %}
+    {% assign category_names = category_names | concat: category_name_array %}
+  {% endfor %}
+  {% assign category_names = category_names | uniq %}
+{% if category_names.size > 0 %}
+<section class="category-shortcuts" aria-label="카테고리">
+  <h2 class="section-label">카테고리</h2>
+  {% for category_name in category_names %}
+  <a class="category-link" href="{{ '/categories/' | relative_url }}#{{ category_name | slugify }}">{{ category_name | escape }} <span class="count">{{ site.categories[category_name].size | default: 0 }}개</span></a>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="post-list">
+  <h2 class="section-label"><span class="dim">$</span> ls _posts/ <span class="count">{{ site.posts.size }}개</span></h2>
+  <ul>
+    {% for post in site.posts %}
+    <li class="post-item">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <div class="post-item-body">
+        <a class="post-item-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% if post.categories.size > 0 %}<a class="post-cat" href="{{ '/categories/' | relative_url }}#{{ post.categories.first | slugify }}">{{ post.categories | first | escape }}</a>{% endif %}
+        <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>
+      </div>
+    </li>
+    {% else %}
+    <li class="empty-state">아직 작성된 글이 없습니다.</li>
+    {% endfor %}
+  </ul>
+</section>
