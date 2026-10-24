@@ -355,3 +355,14 @@ a:hover { text-decoration: underline; }
   .site-header .wrap { height: auto; min-height: 58px; flex-wrap: wrap; gap: 8px 16px; padding-top: 10px; padding-bottom: 10px; }
   .site-nav a:first-child { margin-left: 0; }
 }
+
+/* ---------- 소개 프로필 ---------- */
+.about-profile {
+  display: block;
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  margin: 8px 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
