@@ -4,9 +4,9 @@ title: 소개
 permalink: /about/
 ---
 
-# whoami
+<img class="about-profile" src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="토끼 프로필 그림" width="180" height="180">
 
-<img class="about-profile" src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="컴퓨터 앞에서 공부하는 토끼 프로필 그림" width="735" height="475">
+# whoami
 
 안녕하세요, **HumanPhobia0422**입니다.
 

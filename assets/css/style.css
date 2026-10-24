@@ -359,10 +359,11 @@ a:hover { text-decoration: underline; }
 /* ---------- 소개 프로필 ---------- */
 .about-profile {
   display: block;
-  width: 280px;
-  max-width: 100%;
-  height: auto;
-  margin: 8px 0 24px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: 85% 50%;
+  margin: 32px 0 20px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 50%;
 }
