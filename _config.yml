@@ -23,6 +23,22 @@ defaults:
 
 exclude:
   - README.md
+  - scripts
+  - .githooks
+  - .github
+  - .gitignore
+  - .env
+  - .env.local
+  - .env.production
+  - .aws
+  - .ssh
+  - .codex
+  - private
+  - secrets
+  - credentials.json
+  - secrets.json
+  - work
+  - outputs
 
 # 글이 없어도 표시할 카테고리
 category_list:

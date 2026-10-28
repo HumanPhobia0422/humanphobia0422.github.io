@@ -19,4 +19,3 @@ permalink: /about/
 ## 연락처
 
 - GitHub: [github.com/HumanPhobia0422](https://github.com/HumanPhobia0422)
-- Email: seung060422@naver.com

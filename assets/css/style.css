@@ -291,7 +291,7 @@ a:hover { text-decoration: underline; }
 .category-group h2 {
   font-size: 20px;
   margin: 0 0 8px;
-  color: var(--accent);
+  color: #ffffff;
   font-family: var(--font-mono);
 }
 .category-group .post-item { padding: 10px 0; }
@@ -350,7 +350,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--bg-soft);
-  color: var(--text);
+  color: #ffffff;
 }
 .category-link:hover { border-color: var(--accent); text-decoration: none; }
 .empty-state { padding: 18px 0; color: var(--text-dim); }
