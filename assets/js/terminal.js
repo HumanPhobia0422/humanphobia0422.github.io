@@ -5,6 +5,12 @@
   const input = form.querySelector('.terminal-input');
   const output = document.querySelector('.terminal-output');
   const history = output.querySelector('.terminal-history');
+  let outputTimer;
+
+  const clearOutput = () => {
+    history.replaceChildren();
+    output.hidden = true;
+  };
 
   input.addEventListener('input', () => {
     input.style.width = `${Math.max(1, Math.min(input.value.length + 1, 30))}ch`;
@@ -15,10 +21,10 @@
     const command = input.value.trim();
     if (!command) return;
 
+    clearTimeout(outputTimer);
     const normalized = command.replace(/\s+/g, ' ');
     if (normalized === 'clear') {
-      history.replaceChildren();
-      output.hidden = true;
+      clearOutput();
     } else {
       let response;
       if (normalized === 'ls') {
@@ -40,6 +46,7 @@
       while (history.children.length > 12) history.firstElementChild.remove();
       output.hidden = false;
       output.scrollTop = output.scrollHeight;
+      outputTimer = setTimeout(clearOutput, 15000);
     }
 
     input.value = '';
