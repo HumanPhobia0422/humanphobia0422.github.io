@@ -21,8 +21,13 @@
     const command = input.value.trim();
     if (!command) return;
 
-    clearTimeout(outputTimer);
     const normalized = command.replace(/\s+/g, ' ');
+    input.value = '';
+    input.style.width = '1ch';
+    input.focus();
+    if (!['ls', 'cat flag.txt', 'clear'].includes(normalized)) return;
+
+    clearTimeout(outputTimer);
     if (normalized === 'clear') {
       clearOutput();
     } else {
@@ -31,8 +36,6 @@
         response = 'flag.txt';
       } else if (normalized === 'cat flag.txt') {
         response = '축하합니다 flag를 얻으셨어요!';
-      } else {
-        response = '명령어를 찾을 수 없습니다. ls 또는 cat flag.txt를 입력해 보세요.';
       }
 
       const entry = document.createElement('li');
@@ -49,8 +52,5 @@
       outputTimer = setTimeout(clearOutput, 15000);
     }
 
-    input.value = '';
-    input.style.width = '1ch';
-    input.focus();
   });
 })();
