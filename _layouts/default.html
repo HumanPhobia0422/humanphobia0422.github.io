@@ -12,15 +12,28 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <a class="site-logo" href="{{ '/' | relative_url }}">
-        <span class="prompt-user">{{ site.author }}</span><span class="prompt-at">@</span><span class="prompt-host">sec</span><span class="prompt-path">:~$</span><span class="cursor" aria-hidden="true"></span>
-      </a>
+    <div class="wrap header-row">
+      <div class="terminal-prompt">
+        <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="홈으로 이동">
+          <span class="prompt-user">{{ site.author }}</span><span class="prompt-at">@</span><span class="prompt-host">sec</span><span class="prompt-path">:~$</span>
+        </a>
+        <form class="terminal-form" aria-label="블로그 터미널">
+          <label class="terminal-command-field">
+            <span class="sr-only">터미널 명령어 입력</span>
+            <input class="terminal-input" type="text" name="command" aria-label="터미널 명령어" placeholder=" " autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="send">
+            <span class="cursor" aria-hidden="true"></span>
+          </label>
+          <button class="sr-only" type="submit">명령어 실행</button>
+        </form>
+      </div>
       <nav class="site-nav">
         <a href="{{ '/' | relative_url }}">글</a>
         <a href="{{ '/categories/' | relative_url }}">카테고리</a>
         <a href="{{ '/about/' | relative_url }}">소개</a>
       </nav>
+    </div>
+    <div class="terminal-output" role="region" aria-label="터미널 실행 결과" tabindex="0" hidden>
+      <ol class="wrap terminal-history" role="log" aria-live="polite" aria-relevant="additions"></ol>
     </div>
   </header>
 
@@ -34,5 +47,6 @@
       <a href="https://github.com/{{ site.author }}" rel="noopener">GitHub</a>
     </div>
   </footer>
+  <script src="{{ '/assets/js/terminal.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

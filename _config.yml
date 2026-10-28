@@ -25,4 +25,10 @@ exclude:
   - README.md
 
 # 글이 없어도 표시할 카테고리
-category_list: []
+category_list:
+  - "개발"
+  - "CTF/Wargame"
+  - "Bug Bounty"
+  - "블로그/기술문서"
+  - "논문/컨퍼런스"
+  - "공모전/자격증"

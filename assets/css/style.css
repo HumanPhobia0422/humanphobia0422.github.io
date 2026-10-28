@@ -50,11 +50,15 @@ a:hover { text-decoration: underline; }
   top: 0;
   z-index: 10;
 }
-.site-header .wrap {
+.site-header .header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 58px;
+  min-height: 58px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .site-logo {
   font-family: var(--font-mono);
@@ -352,7 +356,7 @@ a:hover { text-decoration: underline; }
 .empty-state { padding: 18px 0; color: var(--text-dim); }
 .category-group h2 { scroll-margin-top: 80px; }
 @media (max-width: 560px) {
-  .site-header .wrap { height: auto; min-height: 58px; flex-wrap: wrap; gap: 8px 16px; padding-top: 10px; padding-bottom: 10px; }
+  .site-header .header-row { height: auto; min-height: 58px; flex-wrap: wrap; gap: 8px 16px; padding-top: 10px; padding-bottom: 10px; }
   .site-nav a:first-child { margin-left: 0; }
 }
 
@@ -367,3 +371,57 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   border-radius: 50%;
 }
+
+/* ---------- 상단 터미널 ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+.terminal-prompt .site-logo { flex-shrink: 0; }
+.terminal-form { min-width: 0; margin: 0; }
+.terminal-command-field { display: flex; align-items: center; cursor: text; }
+.terminal-input {
+  width: 1ch;
+  min-width: 1ch;
+  max-width: 100%;
+  padding: 0 0 0 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  caret-color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.terminal-input:focus { outline: none; }
+.terminal-form:focus-within { box-shadow: 0 1px var(--accent); }
+.terminal-input:focus + .cursor,
+.terminal-input:not(:placeholder-shown) + .cursor { display: none; }
+.terminal-command-field .cursor { margin-left: 0; }
+.terminal-output { max-height: 180px; overflow-y: auto; border-top: 1px solid var(--line); }
+.terminal-output[hidden] { display: none; }
+.terminal-history { list-style: none; padding-top: 10px; padding-bottom: 10px; }
+.terminal-history li { margin-bottom: 10px; }
+.terminal-history li:last-child { margin-bottom: 0; }
+.terminal-command { color: var(--text-dim); overflow-wrap: anywhere; }
+.terminal-history, .terminal-history pre {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.terminal-history pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
