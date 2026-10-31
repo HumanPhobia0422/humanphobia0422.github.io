@@ -1,9 +1,10 @@
 # 사이트 기본 정보 — 여기만 수정해도 블로그 전체에 반영됩니다
-title: HumanPhobia0422
+title: Kogumo0422
 tagline: 보안 공부 기록
 description: 시스템 해킹, 웹 해킹, 리버싱 등 보안 공부를 정리하는 블로그입니다.
-url: "https://humanphobia0422.github.io"
-author: HumanPhobia0422
+url: "https://kogumo0422.github.io"
+baseurl: ""
+author: Kogumo0422
 
 # 빌드 설정 (건드리지 않아도 됩니다)
 markdown: kramdown

@@ -1,9 +1,9 @@
-# humanphobia0422.github.io
+# kogumo0422.github.io
 
-HumanPhobia0422의 보안 공부 기록 블로그입니다. Jekyll과 GitHub Pages를 사용합니다.
+Kogumo0422의 보안 공부 기록 블로그입니다. Jekyll과 GitHub Pages를 사용합니다.
 
-- 블로그: https://humanphobia0422.github.io
-- 저장소: https://github.com/HumanPhobia0422/humanphobia0422.github.io
+- 블로그: https://kogumo0422.github.io
+- 저장소: https://github.com/Kogumo0422/Kogumo0422.github.io
 
 ## 새 글 쓰기
 

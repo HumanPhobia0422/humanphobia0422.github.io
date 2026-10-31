@@ -8,7 +8,7 @@ permalink: /about/
 
 # whoami
 
-안녕하세요, **HumanPhobia0422**입니다.
+안녕하세요, **Kogumo0422**입니다.
 
 보안을 공부하면서 배운 내용을 정리하는 블로그입니다.
 
@@ -18,4 +18,4 @@ permalink: /about/
 
 ## 연락처
 
-- GitHub: [github.com/HumanPhobia0422](https://github.com/HumanPhobia0422)
+- GitHub: [github.com/Kogumo0422](https://github.com/Kogumo0422)
